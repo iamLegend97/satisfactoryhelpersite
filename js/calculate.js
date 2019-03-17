@@ -2,25 +2,23 @@
 //resources used to craft items (can be any item)
 class resource
 {
-	String name;
-	Number amount;
 	//constructor
-	constructor(String name, Number amount)
+	constructor(name, amount)
 	{
 		this.name = name;
 		this.amount = amount;
 	}
 	//accessors
-	function getAmount()
+	getAmount()
 	{
 		return amount;
 	}
-	function getName()
+	getName()
 	{
 		return name;
 	}
 	//setter
-	function setAmount(int amount)
+	setAmount(amount)
 	{
 		this.amount = amount;
 	}
@@ -29,36 +27,36 @@ class resource
 //items in the game
 class item
 {
-	String name;
-	String craftedIn;      		//machine used to make the item
-	Number baseProductionRate;  //how many per minute
-	Number producedPerProcess;  //how many items produced per feeder item
-	var resourcesNeeded = [];   //list of all resources down to the base unit used to make the item
+	// String name;
+	// String craftedIn;      		//machine used to make the item
+	// Number baseProductionRate;  //how many per minute
+	// Number producedPerProcess;  //how many items produced per feeder item
+	// var resourcesNeeded = [];   //list of all resources down to the base unit used to make the item
 
 	//accessors
-	function getResourcesNeeded()
+	getResourcesNeeded()
 	{
 		return resourcesNeeded;
 	}
-	function getBaseProductionRate()
+	getBaseProductionRate()
 	{
 		return baseProductionRate;
 	}
-	function getProducedPerProcess()
+	getProducedPerProcess()
 	{
 		return producedPerProcess;
 	}
-	function getCraftIn()
+	getCraftIn()
 	{
 		return craftedIn;
 	}
-	function getName()
+	getName()
 	{
 		return name;
 	}
 
 	//constructor
-	constructor(string name)
+	constructor(name)
 	{
 		this.name = name;
 		//assign item properties
