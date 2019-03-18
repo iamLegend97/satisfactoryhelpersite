@@ -1,0 +1,50 @@
+img.source-image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+div.header {
+	position: relative;
+	height: 3em;
+	font-family: 'Comfortaa', cursive !important;
+	color: #FF8E00 !important;
+	font-size: 1.2vw;
+	text-align: center;
+}
+
+div.header p{
+	margin: 0;
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+
+div.text-yellow{
+	font-family: 'Comfortaa', cursive !important;
+	color: yellow !important;
+}
+
+div.text-uline{
+	font-family: 'Comfortaa', cursive !important;
+	text-decoration: underline;
+}
+
+div.colTitle{
+	font-size: .75vw;
+}
+
+figcaption{
+	text-align: center;
+	font-size: .75vw;
+}
+
+.splash img {
+	width: 50%;
+	height: 50%;
+	margin-left: 25%;
+	text-align: center;
+}

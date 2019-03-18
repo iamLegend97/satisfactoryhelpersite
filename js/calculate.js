@@ -652,7 +652,8 @@ function calculate(){
 
 		//create container
 		var container = document.createElement("div");
-		container.className = "splash"
+		container.className = "splash";
+		container.style = "margin-top: 20%";
 
 		//create image
 		var tempItemImage = document.createElement("img");
@@ -666,7 +667,7 @@ function calculate(){
 		//create image caption
 		var tempItemImageCap = document.createElement("figcaption");
 		tempItemImageCap.id = "itemImgCap" + l;
-		tempItemImageCap.innerHTML = totalResourcePerMin[l].Rate + " " + totalResourcePerMin[l].Name + "/min";
+		tempItemImageCap.innerHTML = totalResourcePerMin[l].Rate + " " + totalResourcePerMin[l].Name;
 		
 		//console.log(tempItemImage.src);
 		//do appending
@@ -727,7 +728,7 @@ function calculate(){
 	var truncatedPowerConsump = totalPowerConsumption.toFixed(3);
 	var powerLabel = truncatedPowerConsump.toString();
 	var powerCol = document.getElementById("powerInfo");
-	powerCol.innerHTML = powerLabel + "MW";
+	powerCol.innerHTML = "Power Consumption: " + powerLabel + "MW";
 
 	//make a list of amount of all machines needed to complete job
 	var buildingCounts = [];

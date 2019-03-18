@@ -4,72 +4,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
-	
-<style>
-	img.bg {
-			/* Set rules to fill background */
-			min-height: 100%;
-			min-width: 1024px;
-			
-			/* Set up proportionate scaling */
-			width: 100%;
-			height: auto;
-			
-			/* Set up positioning */
-			position: fixed;
-			top: 0;
-			left: 0;
-		}
-		
-		@media screen and (max-width: 1024px){
-			img.bg {
-				left: 50%;
-				margin-left: -512px; }
-		}
-
-	h1 {
-	padding-top: 3%;
-	font-family: 'Comfortaa', cursive !important;
-	color: #FF8E00 !important;
-	text-align: center;
-	}
-	
-	div.text-yellow{
-		font-family: 'Comfortaa', cursive !important;
-		color: yellow !important;
-	}
-	
-	div.text-uline{
-		font-family: 'Comfortaa', cursive !important;
-		text-decoration: underline;
-	}
-	
-	figcaption{
-		text-align: center;
-	}
-	
-	.splash img {
-		width: 50%;
-		height: 50%;
-		margin-left: 25%;
-		text-align: center;
-		font-size: 50%;
-	}
-	
-</style>
-
+<link rel = "stylesheet" type = "text/css" href = "css/style.css" />
 <link href="css/bootstrap-4.2.1.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<img src="background.png" class="bg">
-	<div class="container-fluid"></div>
-	<h1>iamLegend's Satisfactory Helper</h1>
+	<img src="resources/background.png" class="source-image" alt="no background found">
+	<div class="container-fluid header">
+		<p>Satisfactory Helper</p>
+	</div>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="offset-xl-1 col-xl-1 text-uline text-white" style="text-align: center; background: #0892d0">Amount/min:</div>
-				<div class="col-xl-1 text-uline text-white" style="text-align: center; background: #0892d0">Item:</div>
-				<div class="text-uline offset-xl-1 col-xl-2" style="text-align: center; background: yellow">Power Info:</div>
-				<div class="text-white text-uline offset-xl-0 col-xl-5" style="text-align: center; background: #FF8E00">Input Rates:</div>
+				<div class="offset-xl-1 col-xl-1 text-uline text-white colTitle" style="text-align: center; background: #0892d0">Amount/min:</div>
+				<div class="col-xl-1 text-uline text-white colTitle" style="text-align: center; background: #0892d0">Item:</div>
+				<div class="text-uline offset-xl-1 col-xl-2 colTitle" style="text-align: center; background: yellow">Power Info:</div>
+				<div class="text-white text-uline offset-xl-0 col-xl-5 colTitle" style="text-align: center; background: #FF8E00">Input Rates (items/min):</div>
 			</div>
 		</div>
 		<div class="container-fluid">
@@ -112,11 +60,11 @@
 					<button type="button" class="btn btn-primary btn-lg" style="margin-top: 200px" id="calcButton" onClick="calculate()">Calculate</button>
 				</div>
 				<div class="col-xl-2 text-yellow offset-xl-0" style="padding-top: 20px" id="powerInfo">Select items and press Calulate to begin.</div>
-			  <div class="text-white col-sm-1 offset-xl-0" style="padding-top: 20px" id="itemsCol0" ></div>
-			  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol1"></div>
-			  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol2"></div>
-			  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol3"></div>
-			  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol4"></div>
+			  <div class="text-white col-sm-1 offset-xl-0" id="itemsCol0" ></div>
+			  <div class="text-white col-sm-1" id="itemsCol1"></div>
+			  <div class="text-white col-sm-1" id="itemsCol2"></div>
+			  <div class="text-white col-sm-1" id="itemsCol3"></div>
+			  <div class="text-white col-sm-1" id="itemsCol4"></div>
 			</div>
 			<div class="row">
 			  <div class="offset-xl-1 col-xl-1 text-white" id="buildingsCol0"></div>
