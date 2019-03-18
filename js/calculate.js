@@ -101,6 +101,10 @@ class item
 	{
 		return this.name;
 	}
+	set Name(n)
+	{
+		this.name = n;
+	}
 
 	//constructor
 	constructor(name)
@@ -196,6 +200,12 @@ class item
 				this.resourcesNeeded.push(new resource("Limestone", 3));
 				this.producedPerProcess = 1;
 				break;
+			case "Biomass":
+				this.craftedIn = "Constructor";
+				this.baseProductionRate = 90;
+				this.resourcesNeeded.push(new resource("Leaves", 10));
+				this.producedPerProcess = 6;
+				break;
 			case "Biomass (Leaves)":
 				this.craftedIn = "Constructor";
 				this.baseProductionRate = 90;
@@ -273,7 +283,7 @@ class item
 				break;
 
 			default:
-				this.craftedIn = "Item not found";
+				this.craftedIn = "Not Specified";
 				this.baseProductionRate = 0;
 				this.producedPerProcess = 0;
 				break;
@@ -505,7 +515,17 @@ function calculate(){
 		{
 			//user entered something in textbox i so get it
 			items.push(new item(itemBoxes[r]));
-			//console.log(String(amountPerMin[i]));
+			
+			//spcial recipe handling. keep properties from constuctor, but assigns new name for the rest of the program info.
+			var str = itemBoxes[r];
+			var res = str.split(" ");
+			switch(res[0]){
+				case "Biomass":
+					items[r].Name = "Biomass";
+					break;
+				default:
+					break;
+			}
 		}
 		else
 		{
@@ -667,7 +687,10 @@ function calculate(){
 	{
 		var itemName = totalResourcePerMin[r].Name;
 		var Item = new item(itemName);
-		var numMachinesNeeded = Math.floor(totalResourcePerMin[r].Rate / Item.BaseProductionRate);
+		var numMachinesNeeded = 0;
+		if(Item.BaseProductionRate > 0){
+			numMachinesNeeded = Math.floor(totalResourcePerMin[r].Rate / Item.BaseProductionRate);
+		}
 		
 		var lastMachineRate = 0;
 		var lastMachineUnderclock = 0;
@@ -690,6 +713,7 @@ function calculate(){
 			}
 			currIt += 1;
 		}
+		//console.log(buildings);
 	}
 	for(i = 0; i < buildings.length; i++)
 	{
@@ -705,7 +729,7 @@ function calculate(){
 	var powerCol = document.getElementById("powerInfo");
 	powerCol.innerHTML = powerLabel + "MW";
 
-	//make a list of amount of all machines
+	//make a list of amount of all machines needed to complete job
 	var buildingCounts = [];
 	for (i = 0; i < buildings.length; i++)
 	{
@@ -737,39 +761,47 @@ function calculate(){
 				buildingCounts.push(new buildingCount(buildings[i].Name));
 			}
 		}
+		//console.log(buildingCounts);
 	}
 
 	//place images and labels for all buildings in buildingCounts
 	//console.log(buildingCounts);
+	var colIter = 0;
+	var currCol = 0;
 	for (l = 0; l < buildingCounts.length; l++)
 	{
-		//identify column
-		var col2 = document.getElementById("buildingsCol" + (l%4));
+		//ensure we dont have any "not specified" buildings
+		if(buildingCounts[l].Name != "Not Specified"){
+			//identify column
+			var col2 = document.getElementById("buildingsCol" + currCol);
 
-		//create container
-		var container2 = document.createElement("div");
-		container2.className = "splash"
-		container2.style.marginTop = "20px";
+			//create container
+			var container2 = document.createElement("div");
+			container2.className = "splash"
+			container2.style.marginTop = "20px";
 
-		//create image
-		var tempBuildingImage = document.createElement("img");
-		tempBuildingImage.id = "buildingImage" + l;
-		var path2 = "resources/splashes/" + buildingCounts[l].Name + ".png";
-		
-		tempBuildingImage.src = path2;
-		tempBuildingImage.onerror = function(){
-			document.getElementById("buildingImage" + l).src = "resources/splashes/Not Specified.png";
+			//create image
+			var tempBuildingImage = document.createElement("img");
+			tempBuildingImage.id = "buildingImage" + l;
+			var path2 = "resources/splashes/" + buildingCounts[l].Name + ".png";
+
+			tempBuildingImage.src = path2;
+			tempBuildingImage.onerror = function(){
+				document.getElementById("buildingImage" + l).src = "resources/splashes/Not Specified.png";
+			}
+
+			//create image caption
+			var tempBuildingImageCap = document.createElement("figcaption");
+			tempBuildingImageCap.id = "buildingImgCap" + l;
+			tempBuildingImageCap.innerHTML = buildingCounts[l].Amount + " " + buildingCounts[l].Name;
+
+			//console.log(tempItemImage.src);
+			//do appending
+			container2.appendChild(tempBuildingImage);
+			container2.appendChild(tempBuildingImageCap);
+			col2.appendChild(container2);
+			colIter++;
+			currCol = (colIter%4);
 		}
-		
-		//create image caption
-		var tempBuildingImageCap = document.createElement("figcaption");
-		tempBuildingImageCap.id = "buildingImgCap" + l;
-		tempBuildingImageCap.innerHTML = buildingCounts[l].Amount + " " + buildingCounts[l].Name;
-		
-		//console.log(tempItemImage.src);
-		//do appending
-		container2.appendChild(tempBuildingImage);
-		container2.appendChild(tempBuildingImageCap);
-		col2.appendChild(container2);
 	}
 }
