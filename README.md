@@ -1,4 +1,4 @@
-# iamLegend's Satisfactory Helper
+# Satisfactory Helper
 ## A helper for Satisfactory calculations - A game by Coffee Stain Studios
 https://iamlegend97.github.io/satisfactoryhelpersite/
 
