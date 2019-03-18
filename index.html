@@ -14,9 +14,9 @@ body {
 	}
 
 	h1 {
-	padding-top: 60px;
+	padding-top: 3%;
 	font-family: 'Comfortaa', cursive !important;
-	color: orange !important;
+	color: #FF8E00 !important;
 	text-align: center;
 	}
 	
@@ -30,25 +30,36 @@ body {
 		text-decoration: underline;
 	}
 	
+	figcaption{
+		text-align: center;
+	}
 	
+	.splash img {
+		width: 75px;
+		height: 75px;
+		margin-left: 25%;
+		text-align: center;
+		font-size: 50%;
+	}
 	
 </style>
 
 <link href="css/bootstrap-4.2.1.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<div class="container-fluid"></div>
 <h1>iamLegend's Satisfactory Helper</h1>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="offset-xl-1 col-xl-1 text-white text-uline">Amount/min:</div>
-			<div class="col-xl-1 text-white text-uline">Item:</div>
-			<div class="col-xl-3 text-yellow text-uline offset-xl-1">Power Info:</div>
-			<div class="col-xl-1 text-white text-uline">Input Rates:</div>
+			<div class="offset-xl-1 col-xl-1 text-uline text-white" style="text-align: center; background: #0892d0">Amount/min:</div>
+			<div class="col-xl-1 text-uline text-white" style="text-align: center; background: #0892d0">Item:</div>
+			<div class="text-uline offset-xl-1 col-xl-2" style="text-align: center; background: yellow">Power Info:</div>
+			<div class="text-white text-uline offset-xl-0 col-xl-5" style="text-align: center; background: #FF8E00">Input Rates:</div>
 		</div>
 	</div>
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xl-1 offset-xl-1">
+	  <div class="row">
+			<div class="col-xl-1 offset-xl-1" style="padding-top: 20px">
 				<div class="form-group">
 					<input class="form-control form-control-sm" id="inputBox0" rows="1" onkeypress="return isNumber(event)">
 				</div>
@@ -81,18 +92,29 @@ body {
 				</div>
 			</div>
 			
-			<div class="col-xl-1" id="optionBoxesCol"></div>
-			<div class="col-xl-1">
+			<div class="col-xl-1" style="padding-top: 20px" id="optionBoxesCol"></div>
+			<div class="col-xl-1 text-center">
 				<button type="button" class="btn btn-primary btn-lg" style="margin-top: 200px" id="calcButton" onClick="calculate()">Calculate</button>
 			</div>
-			<div class="col-xl-2 text-yellow offset-xl-0" id="powerInfo">Press Calulate to begin.</div>
-			<div class="offset-xl-1 col-xl-4 text-white">image + decrip</div>
-			<script src="js/drop-downs.js"></script>
-			<script src="js/utils.js"></script>
-			<script src="js/calculate.js"></script>
-			
-		</div>
+			<div class="col-xl-2 text-yellow offset-xl-0" style="padding-top: 20px" id="powerInfo">Select items and press Calulate to begin.</div>
+	  	  <div class="text-white col-sm-1 offset-xl-0" style="padding-top: 20px" id="itemsCol0" ></div>
+	  	  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol1"></div>
+	  	  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol2"></div>
+	 	  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol3"></div>
+		  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol4"></div>
+  		</div>
+		<div class="row">
+		  <div class="offset-xl-1 col-xl-1 text-white" id="buildingsCol0"></div>
+		  <div class="col-xl-1 text-white" id="buildingsCol1"></div>
+		  <div class="col-xl-1 text-white" id="buildingsCol2"></div>
+		  <div class="col-xl-1 text-white" id="buildingsCol3"></div>
+	  </div>
+		<div class = "row"> </div>
 	</div>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/drop-downs.js"></script>
+	<script src="js/utils.js"></script>
+	<script src="js/calculate.js"></script>
+<script src="js/test.js"></script>
 </body>
 </html>
