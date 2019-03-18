@@ -621,7 +621,7 @@ function calculate(){
 				if (totalResourcePerMin[t].Name == topLevelResource.Name)
 				{
 					isInList3 = true;
-					totalResourcePerMin[t].Rate(totalResourcePerMin[t].Rate + topLevelResource.Rate);
+					totalResourcePerMin[t].Rate = totalResourcePerMin[t].Rate + topLevelResource.Rate;
 					break;
 				}
 			}
