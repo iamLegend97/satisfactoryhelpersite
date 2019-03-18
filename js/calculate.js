@@ -700,7 +700,8 @@ function calculate(){
 	//console.log(buildings);
 	
 	//assign total power consumption to text area
-	var powerLabel = totalPowerConsumption.toString();
+	var truncatedPowerConsump = totalPowerConsumption.toFixed(3);
+	var powerLabel = truncatedPowerConsump.toString();
 	var powerCol = document.getElementById("powerInfo");
 	powerCol.innerHTML = powerLabel + "MW";
 
