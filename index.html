@@ -6,12 +6,26 @@
 <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 	
 <style>
-body {
-	background-image: url("background.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	}
+	img.bg {
+			/* Set rules to fill background */
+			min-height: 100%;
+			min-width: 1024px;
+			
+			/* Set up proportionate scaling */
+			width: 100%;
+			height: auto;
+			
+			/* Set up positioning */
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+		
+		@media screen and (max-width: 1024px){
+			img.bg {
+				left: 50%;
+				margin-left: -512px; }
+		}
 
 	h1 {
 	padding-top: 3%;
@@ -35,8 +49,8 @@ body {
 	}
 	
 	.splash img {
-		width: 75px;
-		height: 75px;
+		width: 50%;
+		height: 50%;
 		margin-left: 25%;
 		text-align: center;
 		font-size: 50%;
@@ -47,74 +61,75 @@ body {
 <link href="css/bootstrap-4.2.1.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="container-fluid"></div>
-<h1>iamLegend's Satisfactory Helper</h1>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="offset-xl-1 col-xl-1 text-uline text-white" style="text-align: center; background: #0892d0">Amount/min:</div>
-			<div class="col-xl-1 text-uline text-white" style="text-align: center; background: #0892d0">Item:</div>
-			<div class="text-uline offset-xl-1 col-xl-2" style="text-align: center; background: yellow">Power Info:</div>
-			<div class="text-white text-uline offset-xl-0 col-xl-5" style="text-align: center; background: #FF8E00">Input Rates:</div>
+	<img src="background.png" class="bg">
+	<div class="container-fluid"></div>
+	<h1>iamLegend's Satisfactory Helper</h1>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="offset-xl-1 col-xl-1 text-uline text-white" style="text-align: center; background: #0892d0">Amount/min:</div>
+				<div class="col-xl-1 text-uline text-white" style="text-align: center; background: #0892d0">Item:</div>
+				<div class="text-uline offset-xl-1 col-xl-2" style="text-align: center; background: yellow">Power Info:</div>
+				<div class="text-white text-uline offset-xl-0 col-xl-5" style="text-align: center; background: #FF8E00">Input Rates:</div>
+			</div>
 		</div>
-	</div>
-	<div class="container-fluid">
-	  <div class="row">
-			<div class="col-xl-1 offset-xl-1" style="padding-top: 20px">
-				<div class="form-group">
-					<input class="form-control form-control-sm" id="inputBox0" rows="1" onkeypress="return isNumber(event)">
+		<div class="container-fluid">
+		  <div class="row">
+				<div class="col-xl-1 offset-xl-1" style="padding-top: 20px">
+					<div class="form-group">
+						<input class="form-control form-control-sm" id="inputBox0" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+					</div>
+					<div class="form-group">
+						<input class="form-control form-control-sm" id="inputBox1" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+					</div>
+					<div class="form-group">
+						<input class="form-control form-control-sm" id="inputBox2" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+					</div>
+					<div class="form-group">
+						<input class="form-control form-control-sm" id="inputBox3" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+					</div>
+					<div class="form-group">
+						<input class="form-control form-control-sm" id="inputBox4" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+					</div>
+					<div class="form-group">
+						<input class="form-control form-control-sm" id="inputBox5" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+					</div>
+					<div class="form-group">
+						<input class="form-control form-control-sm" id="inputBox6" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+					</div>
+					<div class="form-group">
+						<input class="form-control form-control-sm" id="inputBox7" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+					</div>
+					<div class="form-group">
+						<input class="form-control form-control-sm" id="inputBox8" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+					</div>
+					<div class="form-group">
+						<input class="form-control form-control-sm" id="inputBox9" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+					</div>
 				</div>
-				<div class="form-group">
-					<input class="form-control form-control-sm" id="inputBox1" rows="1" onkeypress="return isNumber(event)">
+
+				<div class="col-xl-1" style="padding-top: 20px" id="optionBoxesCol"></div>
+				<div class="col-xl-1 text-center">
+					<button type="button" class="btn btn-primary btn-lg" style="margin-top: 200px" id="calcButton" onClick="calculate()">Calculate</button>
 				</div>
-				<div class="form-group">
-					<input class="form-control form-control-sm" id="inputBox2" rows="1" onkeypress="return isNumber(event)">
-				</div>
-				<div class="form-group">
-					<input class="form-control form-control-sm" id="inputBox3" rows="1" onkeypress="return isNumber(event)">
-				</div>
-				<div class="form-group">
-					<input class="form-control form-control-sm" id="inputBox4" rows="1" onkeypress="return isNumber(event)">
-				</div>
-				<div class="form-group">
-					<input class="form-control form-control-sm" id="inputBox5" rows="1" onkeypress="return isNumber(event)">
-				</div>
-				<div class="form-group">
-					<input class="form-control form-control-sm" id="inputBox6" rows="1" onkeypress="return isNumber(event)">
-				</div>
-				<div class="form-group">
-					<input class="form-control form-control-sm" id="inputBox7" rows="1" onkeypress="return isNumber(event)">
-				</div>
-				<div class="form-group">
-					<input class="form-control form-control-sm" id="inputBox8" rows="1" onkeypress="return isNumber(event)">
-				</div>
-				<div class="form-group">
-					<input class="form-control form-control-sm" id="inputBox9" rows="1" onkeypress="return isNumber(event)">
-				</div>
+				<div class="col-xl-2 text-yellow offset-xl-0" style="padding-top: 20px" id="powerInfo">Select items and press Calulate to begin.</div>
+			  <div class="text-white col-sm-1 offset-xl-0" style="padding-top: 20px" id="itemsCol0" ></div>
+			  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol1"></div>
+			  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol2"></div>
+			  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol3"></div>
+			  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol4"></div>
 			</div>
-			
-			<div class="col-xl-1" style="padding-top: 20px" id="optionBoxesCol"></div>
-			<div class="col-xl-1 text-center">
-				<button type="button" class="btn btn-primary btn-lg" style="margin-top: 200px" id="calcButton" onClick="calculate()">Calculate</button>
-			</div>
-			<div class="col-xl-2 text-yellow offset-xl-0" style="padding-top: 20px" id="powerInfo">Select items and press Calulate to begin.</div>
-	  	  <div class="text-white col-sm-1 offset-xl-0" style="padding-top: 20px" id="itemsCol0" ></div>
-	  	  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol1"></div>
-	  	  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol2"></div>
-	 	  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol3"></div>
-		  <div class="text-white col-sm-1" style="padding-top: 20px" id="itemsCol4"></div>
-  		</div>
-		<div class="row">
-		  <div class="offset-xl-1 col-xl-1 text-white" id="buildingsCol0"></div>
-		  <div class="col-xl-1 text-white" id="buildingsCol1"></div>
-		  <div class="col-xl-1 text-white" id="buildingsCol2"></div>
-		  <div class="col-xl-1 text-white" id="buildingsCol3"></div>
-	  </div>
-		<div class = "row"> </div>
-	</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="js/drop-downs.js"></script>
-	<script src="js/utils.js"></script>
-	<script src="js/calculate.js"></script>
-<script src="js/test.js"></script>
+			<div class="row">
+			  <div class="offset-xl-1 col-xl-1 text-white" id="buildingsCol0"></div>
+			  <div class="col-xl-1 text-white" id="buildingsCol1"></div>
+			  <div class="col-xl-1 text-white" id="buildingsCol2"></div>
+			  <div class="col-xl-1 text-white" id="buildingsCol3"></div>
+		  </div>
+			<div class = "row"> </div>
+		</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/drop-downs.js"></script>
+		<script src="js/utils.js"></script>
+		<script src="js/calculate.js"></script>
+	<script src="js/test.js"></script>
 </body>
 </html>

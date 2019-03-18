@@ -479,22 +479,6 @@ function calculate(){
 		parseInt(document.getElementById("inputBox9").value, 10)
 	];
 	
-	
-	for(var i = 0; i < 10; i++)
-	{
-		if (!(textBoxes[i] == "" || textBoxes[i].length == 0 || textBoxes[i] == null))
-		{
-			//user entered something in textbox i so get it
-			amountPerMin.push(textBoxes[i]);
-			//console.log(String(amountPerMin[i]));
-		}
-		else
-		{
-			//nothing was entered in textbox i so set equal to zero
-			amountPerMin.push(0);
-		}
-	}
-	
 	var items = [];
 	var itemBoxes = [
 		$('#itemChoice0 :selected').text(),
@@ -508,6 +492,22 @@ function calculate(){
 		$('#itemChoice8 :selected').text(),
 		$('#itemChoice9 :selected').text(),
 	];
+	
+	for(var i = 0; i < 10; i++)
+	{
+		if (!(textBoxes[i] == "" || textBoxes[i].length == 0 || textBoxes[i] == null || itemBoxes[i] == "None"))
+		{
+			//user entered something in textbox i so get it
+			amountPerMin.push(textBoxes[i]);
+			//console.log(String(amountPerMin[i]));
+		}
+		else
+		{
+			//nothing was entered in textbox i so set equal to zero
+			amountPerMin.push(0);
+		}
+	}
+	
 	//console.log(itemBoxes);
 	for(var r = 0; r < 10; r++)
 	{
@@ -516,7 +516,7 @@ function calculate(){
 			//user entered something in textbox i so get it
 			items.push(new item(itemBoxes[r]));
 			
-			//spcial recipe handling. keep properties from constuctor, but assigns new name for the rest of the program info.
+			//special recipe handling. keep properties from constuctor, but assigns new name for the rest of the program info.
 			var str = itemBoxes[r];
 			var res = str.split(" ");
 			switch(res[0]){
