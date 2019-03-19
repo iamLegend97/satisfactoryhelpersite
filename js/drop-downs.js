@@ -11,7 +11,7 @@ for(var i = 0; i < 10; i++){
 	//please keep items in alphabetical order
 	var option0 = document.createElement("option");
 	option0.id = "optionBox" + i + "." + 0;
-	option0.innerHTML = "None";
+	option0.innerHTML = "Input Option " + i;
 	var option1 = document.createElement("option");
 	option1.id = "optionBox" + i + "." + 1;
 	option1.innerHTML = "Biofuel";

@@ -7,3 +7,13 @@ function isNumber(evt) {
     }
     return true;
 }
+
+/*
+window.onresize = displayWindowSize;
+window.onload = displayWindowSize;
+function displayWindowSize(){
+	console.log("Width: " + window.innerWidth);
+	console.log("Height: " + window.innerHeight);
+	console.log("==================");
+}
+*/

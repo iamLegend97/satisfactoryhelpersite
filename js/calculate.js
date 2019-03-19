@@ -495,7 +495,9 @@ function calculate(){
 	
 	for(var i = 0; i < 10; i++)
 	{
-		if (!(textBoxes[i] == "" || textBoxes[i].length == 0 || textBoxes[i] == null || itemBoxes[i] == "None"))
+		var select = itemBoxes[i];
+		var spec = select.split(" ");
+		if (!(textBoxes[i] == "" || textBoxes[i].length == 0 || textBoxes[i] == null || spec[0] == "Input"))
 		{
 			//user entered something in textbox i so get it
 			amountPerMin.push(textBoxes[i]);
@@ -652,7 +654,7 @@ function calculate(){
 
 		//create container
 		var container = document.createElement("div");
-		container.className = "splash";
+		container.className = "splashItem";
 		container.style = "margin-top: 20%";
 
 		//create image
@@ -778,7 +780,7 @@ function calculate(){
 
 			//create container
 			var container2 = document.createElement("div");
-			container2.className = "splash"
+			container2.className = "splashBuilding"
 			container2.style.marginTop = "20px";
 
 			//create image
