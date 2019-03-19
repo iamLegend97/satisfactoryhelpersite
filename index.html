@@ -8,6 +8,34 @@
 <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
 <link href="css/bootstrap-4.2.1.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	mxBasePath = 'js/src';
+</script>
+<script type="text/javascript" src="js/mxClient.js"></script>
+<script type="text/javascript">
+	function genLayout(){
+		if(!mxClient.isBrowserSupported()){
+			mxUtils.error('Browser Not Supported', 200, false);
+		}
+		else {
+			var graph = new mxGraph(container);
+			
+			new mxRubberband(graph);
+			
+			var parent = graph.getDefaultParent();
+			
+			graph.getModel().beginUpdate();
+			try{
+				var v1 = graph.insertVertex(parent, null, "Hello", 20, 20, 80, 30);
+				var v2 = graph.insertVertex(parent, null, "World!", 200, 150, 80, 30);
+				var e1 = graph.insertEdge(parent, null, 'this is an edge', v1, v2);
+			}
+			finally{
+				graph.getModel().endUpdate();
+			}
+		}
+	}
+</script>
 </head>
 	
 <body>
@@ -60,7 +88,7 @@
 
 				<div class="col-xl-1 greyBackground" style="padding-top: 20px" id="optionBoxesCol"></div>
 				<div class="col-xl-1 text-center greyBackground">
-				  <button type="button" class="btn btn-primary btn-block" style="font-family: 'Satisfontory_v1.5', sans-serif;" id="calcButton" onClick="calculate()">Calculate</button>
+				  <button type="button" class="btn btn-primary btn-block calcBtn" style="font-family: 'Satisfontory_v1.5', sans-serif;" id="calcButton" onClick="calculate()">Calculate</button>
 			</div>
 				<div class="col-xl-2 offset-xl-0 border-left border-right border-bottom border-white greyBackground powerText" style=" color: yellow; font-family: 'Satisfontory_v1.5', sans-serif;" id="powerInfo">
 					Select items and press Calulate to begin.
@@ -72,8 +100,10 @@
 			  <div class="text-white col-sm-1 border-right border-bottom border-black greyBackground" id="itemsCol4"></div>
 			</div>
 		  	<div class="row">
-				<div class="greyBackground col-xl-5 offset-xl-1"></div>
-			<div class="col-xl-5 greyBackground colTitle" style="text-align: center; background: #56E020 ; font-family: 'Satisfontory_v1.5', sans-serif;">Buildings:</div>
+				<div class="greyBackground col-xl-5 offset-xl-1">
+					<button type="button" class="btn btn-primary btn-block" style="font-family: 'Satisfontory_v1.5', sans-serif;" id="genLayoutButton" onClick="genLayout(diagramCol)">Generate Layout</button>
+				</div>
+			<div class="col-xl-5 greyBackground colTitleLg" style="text-align: center; background: #56E020 ; font-family: 'Satisfontory_v1.5', sans-serif;">Buildings:</div>
 			</div>
 			<div class="row">
 				<div class="offset-xl-1 col-xl-5 greyBackground" id="diagramCol"></div>
