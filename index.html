@@ -16,7 +16,7 @@
     </div>
 		<div class="container-fluid">
 		  <div class="row">
-			<div class="col-xl-1 text-white colTitle offset-xl-1" style="text-align: center; background: #0892d0; font-family: 'Satisfontory_v1.5', sans-serif;">Amount/min:</div>
+			<div class="col-xl-1 text-white colTitle offset-xl-1" style="text-align: center; background: #0892d0; font-family: 'Satisfontory_v1.5', sans-serif;">Output/min:</div>
 			<div class="col-xl-1 text-white colTitle" style="text-align: center; background: #0892d0; font-family: 'Satisfontory_v1.5', sans-serif;">Item:</div>
 			<div class="col-xl-1 greyBackground"></div>
 			<div class="col-xl-2 colTitle offset-xl-0" style="text-align: center; background: yellow; font-family: 'Satisfontory_v1.5', sans-serif;">Power Info:</div>
@@ -27,41 +27,41 @@
 		  <div class="row">
 				<div class="col-xl-1 greyBackground offset-xl-1" style="padding-top: 20px">
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox0" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+				    <input class="form-control form-control-sm" id="inputBox0" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 0">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox1" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+				    <input class="form-control form-control-sm" id="inputBox1" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 1">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox2" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+				    <input class="form-control form-control-sm" id="inputBox2" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 2">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox3" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+				    <input class="form-control form-control-sm" id="inputBox3" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 3">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox4" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+				    <input class="form-control form-control-sm" id="inputBox4" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 4">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox5" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+				    <input class="form-control form-control-sm" id="inputBox5" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 5">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox6" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+				    <input class="form-control form-control-sm" id="inputBox6" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 6">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox7" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+				    <input class="form-control form-control-sm" id="inputBox7" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 7">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox8" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+				    <input class="form-control form-control-sm" id="inputBox8" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 8">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox9" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount">
+				    <input class="form-control form-control-sm" id="inputBox9" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 9">
 			      </div>
 		    </div>
 
 				<div class="col-xl-1 greyBackground" style="padding-top: 20px" id="optionBoxesCol"></div>
 				<div class="col-xl-1 text-center greyBackground">
-					<button type="button" class="btn btn-primary btn-block" style="font-family: 'Satisfontory_v1.5', sans-serif;" id="calcButton" onClick="calculate()">Calculate</button>
-				</div>
+				  <button type="button" class="btn btn-primary btn-block" style="font-family: 'Satisfontory_v1.5', sans-serif;" id="calcButton" onClick="calculate()">Calculate</button>
+			</div>
 				<div class="col-xl-2 offset-xl-0 border-left border-right border-bottom border-white greyBackground powerText" style=" color: yellow; font-family: 'Satisfontory_v1.5', sans-serif;" id="powerInfo">
 					Select items and press Calulate to begin.
 			  	</div>
@@ -71,20 +71,27 @@
 			  <div class="text-white col-sm-1 border-bottom border-white greyBackground" id="itemsCol3"></div>
 			  <div class="text-white col-sm-1 border-right border-bottom border-black greyBackground" id="itemsCol4"></div>
 			</div>
+		  	<div class="row">
+				<div class="greyBackground col-xl-5 offset-xl-1"></div>
+			<div class="col-xl-5 greyBackground colTitle" style="text-align: center; background: #56E020 ; font-family: 'Satisfontory_v1.5', sans-serif;">Buildings:</div>
+			</div>
 			<div class="row">
-				<div class="offset-xl-1 col-xl-5 greyBackground"></div>
+				<div class="offset-xl-1 col-xl-5 greyBackground" id="diagramCol"></div>
 				<div class="col-xl-1 text-white greyBackground offset-xl-0" id="buildingsCol0"></div>
 				<div class="col-xl-1 text-white greyBackground" id="buildingsCol1"></div>
 			  <div class="col-xl-1 text-white greyBackground" id="buildingsCol2"></div>
 			  <div class="col-xl-1 text-white greyBackground" id="buildingsCol3"></div>
-			  <div class="greyBackground col-xl-1"></div>
+			  <div class="greyBackground col-xl-1" id="buildingsCol4"></div>
           </div>
-			<div class = "row"> </div>
 		</div>
+	<footer>Created by Kyle Henry. This site nor project is in any way affiliated with Coffee Stain Studios or Satisfactory. All content on this page is intended for personal use only.</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="js/drop-downs.js"></script>
-		<script src="js/utils.js"></script>
-		<script src="js/calculate.js"></script>
+	<script src="js/drop-downs.js"></script>
+	<script src="js/utils.js"></script>
+	<script src="js/calculate.js"></script>
 	<script src="js/test.js"></script>
+	<script src="js/viz.js" charset="utf-8"></script>;
+	<script src="js/full.render.js"></script>
+	
 </body>
 </html>

@@ -641,9 +641,12 @@ function calculate(){
 	if (runPrev)
 	{
 		//clear items/buildings images from prev run
-		var prevItems = document.getElementsByClassName("splash");
+		var prevItems = document.getElementsByClassName("splashItem");
+		var prevBuildings = document.getElementsByClassName("splashBuilding");
 		while(prevItems.length > 0)
 			prevItems[0].parentNode.removeChild(prevItems[0]);
+		while(prevBuildings.length > 0)
+			prevBuildings[0].parentNode.removeChild(prevBuildings[0]);
 	}
 
 	//making new item labels and images
@@ -804,7 +807,7 @@ function calculate(){
 			container2.appendChild(tempBuildingImageCap);
 			col2.appendChild(container2);
 			colIter++;
-			currCol = (colIter%4);
+			currCol = (colIter%5);
 		}
 	}
 }
