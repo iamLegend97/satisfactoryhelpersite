@@ -9,9 +9,6 @@ Performs calculations on sets of data from the game "Satisfactory"
 //resources used to craft items (can be any item)
 class ResourceRate
 {
-	//string name;
-	//double rate;
-
 	constructor(name, rate)
 	{
 		this.name = name;
@@ -33,24 +30,9 @@ class ResourceRate
 	{
 		this.rate = r;
 	}
-	
-	/////FIXME/////
-	/*
-	public Image getImage()
-	{
-		Image itemImage;
-		if (File.Exists("../../resources/splashes/" + name + ".png"))
-		{
-			itemImage = Image.FromFile("../../resources/splashes/" + name + ".png");
-		}
-		else
-		{
-			itemImage = Image.FromFile("../../resources/splashes/default_no_image.png");
-		}
-		Image resizedImage = new Bitmap(itemImage, new Size(75, 75));
-		return resizedImage;
+	set Name(n){
+		this.name = n;
 	}
-	*/
 }
 
 class resource
@@ -182,9 +164,10 @@ class item
 			case "Screws":
 				this.craftedIn = "Constructor";
 				this.baseProductionRate = 90;
-				this.resourcesNeeded.push(new resource("Iron Ingot", 2));
-				this.resourcesNeeded.push(new resource("Iron Ore", 2));
-				this.producedPerProcess = 12;
+				this.resourcesNeeded.push(new resource("Iron Rod", 1));
+				this.resourcesNeeded.push(new resource("Iron Ingot", 1));
+				this.resourcesNeeded.push(new resource("Iron Ore", 1));
+				this.producedPerProcess = 6;
 				break;
 			case "Screws (from rods)":
 				this.craftedIn = "Constructor";
@@ -245,7 +228,7 @@ class item
 				this.resourcesNeeded.push(new resource("Iron Ore", 12));
 				this.producedPerProcess = 1;
 				break;
-			case "Reinforced Iron Plate (Hard Drive 1)":
+			case "Reinforced Iron Plate (Alternative Recipe)":
 				this.craftedIn = "Assembler";
 				this.baseProductionRate = 7.5;
 				this.resourcesNeeded.push(new resource("Iron Plate", 10));
@@ -281,6 +264,121 @@ class item
 				this.resourcesNeeded.push(new resource("Leaves", 2));
 				this.producedPerProcess = 1;
 				break;
+			case "Steel Ingot":
+				this.craftedIn = "Foundry";
+				this.baseProductionRate = 30;
+				this.resourcesNeeded.push(new resource("Iron Ore", 3));
+				this.resourcesNeeded.push(new resource("Coal", 3));
+				this.producedPerProcess = 2;
+				break;
+			case "Steel Beam":
+				this.craftedIn = "Constructor";
+				this.baseProductionRate = 10;
+				this.resourcesNeeded.push(new resource("Steel Ingot", 3));
+				this.resourcesNeeded.push(new resource("Iron Ore", 9));
+				this.resourcesNeeded.push(new resource("Coal", 9));
+				this.producedPerProcess = 1;
+				break;
+			case "Steel Pipe":
+				this.craftedIn = "Constructor";
+				this.baseProductionRate = 15;
+				this.resourcesNeeded.push(new resource("Steel Ingot", 1));
+				this.resourcesNeeded.push(new resource("Iron Ore", 3));
+				this.resourcesNeeded.push(new resource("Coal", 3));
+				this.producedPerProcess = 1;
+				break;
+			case "Encased Industrial Beam":
+				this.craftedIn = "Assembler";
+				this.baseProductionRate = 4;
+				this.resourcesNeeded.push(new resource("Steel Beam", 4));
+				this.resourcesNeeded.push(new resource("Steel Ingot", 12));
+				this.resourcesNeeded.push(new resource("Iron Ore", 36));
+				this.resourcesNeeded.push(new resource("Coal", 36));
+				this.resourcesNeeded.push(new resource("Concrete", 5));
+				this.resourcesNeeded.push(new resource("Limestone", 3));
+				this.producedPerProcess = 1;
+				break;
+			case "Stator":
+				this.craftedIn = "Assembler";
+				this.baseProductionRate = 6;
+				this.resourcesNeeded.push(new resource("Steel Pipe", 3));
+				this.resourcesNeeded.push(new resource("Steel Ingot", 3));
+				this.resourcesNeeded.push(new resource("Iron Ore", 9));
+				this.resourcesNeeded.push(new resource("Coal", 9));
+				this.resourcesNeeded.push(new resource("Wire", 10));
+				this.resourcesNeeded.push(new resource("Copper Ingot", 10));
+				this.resourcesNeeded.push(new resource("Copper Ore", 10));
+				this.producedPerProcess = 1;
+				break;
+			case "Motor":
+				this.craftedIn = "Assembler";
+				this.baseProductionRate = 5;
+				this.resourcesNeeded.push(new resource("Iron Rod", 3));
+				this.resourcesNeeded.push(new resource("Screws", 22));
+				this.resourcesNeeded.push(new resource("Iron Ingot", 7));
+				this.resourcesNeeded.push(new resource("Iron Ore", 7));
+				
+				this.resourcesNeeded.push(new resource("Steel Pipe", 3));
+				this.resourcesNeeded.push(new resource("Steel Ingot", 3));
+				this.resourcesNeeded.push(new resource("Iron Ore", 9));
+				this.resourcesNeeded.push(new resource("Coal", 9));
+				this.resourcesNeeded.push(new resource("Wire", 10));
+				this.resourcesNeeded.push(new resource("Copper Ingot", 10));
+				this.resourcesNeeded.push(new resource("Copper Ore", 10));
+				this.producedPerProcess = 1;
+				break;
+			case "Heavy Modular Frame":
+				this.craftedIn = "Manufacturer";
+				this.baseProductionRate = 2;
+				this.resourcesNeeded.push(new resource("Modular Frame", 5));
+				this.resourcesNeeded.push(new resource("Reinforced Iron Plate", 15));
+				this.resourcesNeeded.push(new resource("Iron Rod", 30));
+				this.resourcesNeeded.push(new resource("Screws", 360));
+				this.resourcesNeeded.push(new resource("Iron Ingot", 190));
+				this.resourcesNeeded.push(new resource("Iron Ore", 190));
+				
+				this.resourcesNeeded.push(new resource("Steel Pipe", 15));
+				this.resourcesNeeded.push(new resource("Steel Ingot", 15));
+				this.resourcesNeeded.push(new resource("Iron Ore", 45));
+				this.resourcesNeeded.push(new resource("Coal", 45));
+				
+				this.resourcesNeeded.push(new resource("Encased Industrial Beam", 3));
+				this.resourcesNeeded.push(new resource("Steel Beam", 12));
+				this.resourcesNeeded.push(new resource("Steel Ingot", 36));
+				this.resourcesNeeded.push(new resource("Iron Ore", 108));
+				this.resourcesNeeded.push(new resource("Coal", 108));
+				this.resourcesNeeded.push(new resource("Concrete", 15));
+				this.resourcesNeeded.push(new resource("Limestone", 9));
+				
+				this.resourcesNeeded.push(new resource("Screws", 90));
+				this.resourcesNeeded.push(new resource("Iron Rod", 90));
+				this.resourcesNeeded.push(new resource("Iron Ingot", 90));
+				this.resourcesNeeded.push(new resource("Iron Ore", 90));
+				
+				this.producedPerProcess = 1;
+				break;
+			case "Crude Oil":
+				this.craftedIn = "Oil Pump";
+				this.baseProductionRate = 60;
+				break;
+			case "Plastic":
+				this.craftedIn = "Oil Refinery";
+				this.baseProductionRate = 7.5;
+				this.resourcesNeeded.push(new resource("Crude Oil", 4));
+				this.producedPerProcess = 3;
+				break;
+			case "Fuel":
+				this.craftedIn = "Oil Refinery";
+				this.baseProductionRate = 16;
+				this.resourcesNeeded.push(new resource("Crude Oil", 8));
+				this.producedPerProcess = 8;
+				break;
+			case "Rubber":
+				this.craftedIn = "Oil Refinery";
+				this.baseProductionRate = 32;
+				this.resourcesNeeded.push(new resource("Crude Oil", 4));
+				this.producedPerProcess = 4;
+				break;
 
 			default:
 				this.craftedIn = "Not Specified";
@@ -294,15 +392,12 @@ class item
 //production buildings in the game
 class building
 {
-	//string name;
-	//double powerUsage;  //in MW
-	//string producing;
-
 	//constructor
 	constructor(nameGiven)
 	{
 		this.name = nameGiven;
 		this.producing = "";
+		this.clock = 1;
 		switch (nameGiven)
 		{
 
@@ -317,6 +412,15 @@ class building
 				break;
 			case "Assembler":
 				this.powerUsage = 15;
+				break;
+			case "Manufacturer":
+				this.powerUsage = 30;
+				break;
+			case "Oil Pump":
+				this.powerUsage = 20;
+				break;
+			case "Oil Refinery":
+				this.powerUsage = 25;
 				break;
 
 			default:
@@ -333,31 +437,36 @@ class building
 	{
 		return this.powerUsage;
 	}
+	get Clock(){
+		return this.clock;
+	}
 
 	//setters
 	set Producing(producingGiven)
 	{
 		this.producing = producingGiven;
 	}
+	set Clock(c)
+	{
+		this.clock = c;
+	}
 
-	applyClock(clock)
+	ApplyClock(clock)
 	{
 		this.powerUsage = 4 * Math.pow(clock, 1.636);
 	}
+	
 
 }
 
 class buildingCount
 {
-	//used for storing a building count
-	//string name;
-	//int amount;
-
 	//constructor
 	constructor(nameGiven)
 	{
 		this.name = nameGiven;
 		this.amount = 1;
+		this.lastMachineUnderclock = 1;
 	}
 
 	//accessors
@@ -368,6 +477,10 @@ class buildingCount
 	get Amount()
 	{
 		return this.amount;
+	}
+	
+	get LastMachineUnderclock(){
+		return this.lastMachineUnderclock;
 	}
 
 
@@ -381,31 +494,14 @@ class buildingCount
 		this.amount = amountGiven;
 	}
 	
-	/////FIXME////
-	/*
-	public Image getImage()
-	{
-		Image buildingImage;
-		if (File.Exists("../../resources/splashes/" + name + ".png"))
-		{
-			buildingImage = Image.FromFile("../../resources/splashes/" + name + ".png");
-		}
-		else
-		{
-			buildingImage = Image.FromFile("../../resources/splashes/default_no_image.png");
-		}
-		Image resizedImage = new Bitmap(buildingImage, new Size(75, 75));
-		return resizedImage;
+	set LastMachineUnderclock(u){
+		this.lastMachineUnderclock = u;
 	}
-	*/
 }
 
 //power generation buildings in the game
 class generator
 {
-	//string name;
-	//double powerGen;
-	//double productionRate;  //used for clocking
 	//constructor
 	constructor(nameGiven)
 	{
@@ -517,17 +613,6 @@ function calculate(){
 		{
 			//user entered something in textbox i so get it
 			items.push(new item(itemBoxes[r]));
-			
-			//special recipe handling. keep properties from constuctor, but assigns new name for the rest of the program info.
-			var str = itemBoxes[r];
-			var res = str.split(" ");
-			switch(res[0]){
-				case "Biomass":
-					items[r].Name = "Biomass";
-					break;
-				default:
-					break;
-			}
 		}
 		else
 		{
@@ -558,7 +643,7 @@ function calculate(){
 			{
 				var tempAmount = tempResources[j].Amount;
 				//get the base resource per min required to run the base process
-				var baseAmountPerMin = tempAmount * baseRate;
+				var baseAmountPerMin = tempAmount * (baseRate / items[q].producedPerProcess);
 				var neededAmountPerMin = baseAmountPerMin * productionRatio;
 
 				if(tempResourcePerMin.length == 0)
@@ -575,7 +660,7 @@ function calculate(){
 						if (tempResourcePerMin[k].Name == tempResources[j].Name)
 						{
 							isInList = true;
-							tempResourcePerMin[k].Rate(tempResourcePerMin[k].Rate + neededAmountPerMin);
+							tempResourcePerMin[k].Rate = tempResourcePerMin[k].Rate + neededAmountPerMin;
 							break;
 						}
 					}
@@ -652,6 +737,18 @@ function calculate(){
 	//making new item labels and images
 	for (var l = 0; l < totalResourcePerMin.length; l++)
 	{
+		//special recipe handling. keep properties from the rates calculated, but assigns new name for image generation.
+		var str = totalResourcePerMin[l].Name;
+		var res = str.split(" ");
+		switch(res[0]){
+			case "Biomass":
+				totalResourcePerMin[l].Name = "Biomass";
+				break;
+			default:
+				break;
+		}
+		//console.log(totalResourcePerMin[l]);
+		
 		//identify column
 		var col = document.getElementById("itemsCol" + (l%5));
 
@@ -699,14 +796,14 @@ function calculate(){
 		}
 		
 		var lastMachineRate = 0;
-		var lastMachineUnderclock = 0;
+		var lastMachineUclock = 0;
 		var uneven = false;    //set to true if the item rate isnt evenly divisable by the baserate
 		if ((totalResourcePerMin[r].Rate % Item.BaseProductionRate) != 0)
 		{
 			uneven = true;
 			numMachinesNeeded += 1;
 			lastMachineRate = totalResourcePerMin[r].Rate % Item.BaseProductionRate;
-			lastMachineUnderclock = lastMachineRate / Item.BaseProductionRate;
+			lastMachineUclock = lastMachineRate / Item.BaseProductionRate;
 		}
 		for(var b = 0; b < numMachinesNeeded; b++)
 		{
@@ -715,7 +812,8 @@ function calculate(){
 			if(b == numMachinesNeeded - 1 && uneven)
 			{
 				//we are at the last item so set the underclock rate
-				buildings[b].applyClock(lastMachineUnderclock);
+				buildings[b].ApplyClock(lastMachineUclock);
+				buildings[b].Clock = lastMachineUclock;
 			}
 			currIt += 1;
 		}
@@ -741,7 +839,11 @@ function calculate(){
 	{
 		if(buildingCounts.length == 0)
 		{
+			//list is empty
 			buildingCounts.push(new buildingCount(buildings[i].Name));
+			if(buildings[i].Clock < 1){
+				buildingCounts[0].LastMachineUnderclock = buildings[i].Clock;
+			}
 		}
 		else
 		{
@@ -750,6 +852,7 @@ function calculate(){
 			{
 				if (buildings[i].Name == buildingCounts[j].Name)
 				{
+					//building in list so iterate the total by one
 					/*
 					console.log("Current buildings name: ");
 					console.log(buildings[i].Name);
@@ -758,6 +861,9 @@ function calculate(){
 					*/
 					inList4 = true;
 					buildingCounts[j].Amount += 1;
+					if(buildings[i].Clock < 1){
+						buildingCounts[j].LastMachineUnderclock = buildings[i].Clock;
+					}
 					break;
 				}
 			}
@@ -765,6 +871,10 @@ function calculate(){
 			{
 				//console.log("new push");
 				buildingCounts.push(new buildingCount(buildings[i].Name));
+				if(buildings[i].Clock < 1)
+				{
+					buildingCounts[buildingCounts.Count - 1].LastMachineUnderclock = buildings[i].Clock;
+				}
 			}
 		}
 		//console.log(buildingCounts);
@@ -800,11 +910,18 @@ function calculate(){
 			var tempBuildingImageCap = document.createElement("figcaption");
 			tempBuildingImageCap.id = "buildingImgCap" + l;
 			tempBuildingImageCap.innerHTML = buildingCounts[l].Amount + " " + buildingCounts[l].Name;
-
+			
+			//create last machine overclock cpation
+			var tempBuildingClockCap = document.createElement("figcaption");
+			tempBuildingClockCap.id = "buildingImgClk" + l;
+			tempBuildingClockCap.innerHTML = "Last Underclock: " + buildingCounts[l].LastMachineUnderclock.toFixed(2);
+			tempBuildingClockCap.style.color = '#42f1f4';
+			
 			//console.log(tempItemImage.src);
 			//do appending
 			container2.appendChild(tempBuildingImage);
 			container2.appendChild(tempBuildingImageCap);
+			container2.appendChild(tempBuildingClockCap);
 			col2.appendChild(container2);
 			colIter++;
 			currCol = (colIter%5);

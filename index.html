@@ -8,34 +8,6 @@
 <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
 <link href="css/bootstrap-4.2.1.css" rel="stylesheet" type="text/css">
-<script type="text/javascript">
-	mxBasePath = 'js/src';
-</script>
-<script type="text/javascript" src="js/mxClient.js"></script>
-<script type="text/javascript">
-	function genLayout(){
-		if(!mxClient.isBrowserSupported()){
-			mxUtils.error('Browser Not Supported', 200, false);
-		}
-		else {
-			var graph = new mxGraph(container);
-			
-			new mxRubberband(graph);
-			
-			var parent = graph.getDefaultParent();
-			
-			graph.getModel().beginUpdate();
-			try{
-				var v1 = graph.insertVertex(parent, null, "Hello", 20, 20, 80, 30);
-				var v2 = graph.insertVertex(parent, null, "World!", 200, 150, 80, 30);
-				var e1 = graph.insertEdge(parent, null, 'this is an edge', v1, v2);
-			}
-			finally{
-				graph.getModel().endUpdate();
-			}
-		}
-	}
-</script>
 </head>
 	
 <body>
@@ -55,34 +27,34 @@
 		  <div class="row">
 				<div class="col-xl-1 greyBackground offset-xl-1" style="padding-top: 20px">
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox0" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 0">
+				    <input class="form-control form-control-sm" id="inputBox0" rows="1" onkeypress="return isNumber(event)" placeholder="Amount 0">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox1" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 1">
+				    <input class="form-control form-control-sm" id="inputBox1" rows="1" onkeypress="return isNumber(event)" placeholder="Amount 1">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox2" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 2">
+				    <input class="form-control form-control-sm" id="inputBox2" rows="1" onkeypress="return isNumber(event)" placeholder="Amount 2">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox3" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 3">
+				    <input class="form-control form-control-sm" id="inputBox3" rows="1" onkeypress="return isNumber(event)" placeholder="Amount 3">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox4" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 4">
+				    <input class="form-control form-control-sm" id="inputBox4" rows="1" onkeypress="return isNumber(event)" placeholder="Amount 4">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox5" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 5">
+				    <input class="form-control form-control-sm" id="inputBox5" rows="1" onkeypress="return isNumber(event)" placeholder="Amount 5">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox6" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 6">
+				    <input class="form-control form-control-sm" id="inputBox6" rows="1" onkeypress="return isNumber(event)" placeholder="Amount 6">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox7" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 7">
+				    <input class="form-control form-control-sm" id="inputBox7" rows="1" onkeypress="return isNumber(event)" placeholder="Amount 7">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox8" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 8">
+				    <input class="form-control form-control-sm" id="inputBox8" rows="1" onkeypress="return isNumber(event)" placeholder="Amount 8">
 			      </div>
 				  <div class="form-group">
-				    <input class="form-control form-control-sm" id="inputBox9" rows="1" onkeypress="return isNumber(event)" placeholder="Input Amount 9">
+				    <input class="form-control form-control-sm" id="inputBox9" rows="1" onkeypress="return isNumber(event)" placeholder="Amount 9">
 			      </div>
 		    </div>
 
@@ -111,7 +83,7 @@
 				<div class="col-xl-1 text-white greyBackground" id="buildingsCol1"></div>
 			  <div class="col-xl-1 text-white greyBackground" id="buildingsCol2"></div>
 			  <div class="col-xl-1 text-white greyBackground" id="buildingsCol3"></div>
-			  <div class="greyBackground col-xl-1" id="buildingsCol4"></div>
+			  <div class="text-white greyBackground col-xl-1" id="buildingsCol4"></div>
           </div>
 		</div>
 	<footer>Created by Kyle Henry. This site nor project is in any way affiliated with Coffee Stain Studios or Satisfactory. All content on this page is intended for personal use only.</footer>
