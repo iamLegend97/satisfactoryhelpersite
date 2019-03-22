@@ -251,6 +251,7 @@ class item
 				this.craftedIn = "Assembler";
 				this.baseProductionRate = 4;
 				this.resourcesNeeded.push(new resource("Reinforced Iron Plate", 3));
+				this.resourcesNeeded.push(new resource("Iron Plate", 4));
 				this.resourcesNeeded.push(new resource("Iron Rod", 6));
 				this.resourcesNeeded.push(new resource("Screws", 72));
 				this.resourcesNeeded.push(new resource("Iron Ingot", 38));
