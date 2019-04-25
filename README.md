@@ -1,4 +1,4 @@
-# Satisfactory Helper
+# Satisfactory Helper DISCONTINUED DUE TO REDUNDANCY
 ## A helper for Satisfactory calculations - A game by Coffee Stain Studios
 https://kylerhenry.github.io/satisfactoryhelpersite/
 
